@@ -70,5 +70,11 @@ Invoking the init function
 ./invoke_init.sh samplecontract 1
 ```
 
+Invoking the createSampleContract 
+---------------------------------
+```sh
+./invoke_createSampleRecord.sh
+```
+
 ### Learn more on the Chaincode lifecyle : <a href="https://hyperledger-fabric.readthedocs.io/en/release-2.0/chaincode_lifecycle.html#fabric-chaincode-lifecycle"> Here </a>
 
