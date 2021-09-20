@@ -50,73 +50,13 @@ const invokeTransaction = async (channelName, chaincodeName, fcn, args, username
 
         let result
         let message;
-        if (fcn == "createAsset") {
+        if (fcn == "createSampleRecord") {
             console.log("=========createAsset=========")
             console.log(fcn)
-            result = await contract.submitTransaction(fcn, args[0], args[1], args[2], args[3]);
+            result = await contract.submitTransaction(fcn, args[0], args[1]);
             message = `Successfully added the asset with the key ${args[0]}`
         } 
-        else if (fcn == "createDEC") {
-            console.log("=========creatignDEC=========")
-            result = await contract.submitTransaction(fcn, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7], args[8]);
-            message = `Successfully added the DEC with the key ${args[0]}`
-        }
-        else if (fcn == "updateDEC") {
-            console.log("=========updatingDEC=========")
-            result = await contract.submitTransaction(fcn, args[0], args[1]);
-        }   
-        else if (fcn == "updateAssetStatus") {
-            console.log("=========updatingAsset=========")
-            result = await contract.submitTransaction(fcn, args[0], args[1]);
-        }
-        else if (fcn == "createPrivateAsset") {
-            console.log(`Transient data is : ${transientData}`)
-            let assetData = JSON.parse(transientData)
-            console.log(`asset data is : ${JSON.stringify(assetData)}`)
-            let key = Object.keys(assetData)[0]
-            const transientDataBuffer = {}
-            transientDataBuffer[key] = Buffer.from(JSON.stringify(assetData.asset))
-            result = await contract.createTransaction(fcn)
-                .setTransient(transientDataBuffer)
-                .submit()
-            message = `Successfully submitted transient data`
-        }
-        else if (fcn == "createEnergyRecord") {
-            console.log("=========createEnergyRecord=========")
-            console.log(fcn)
-            result = await contract.submitTransaction(fcn, args[0]);
-            message = `Successfully added the Energy Record`
-        } 
-        else if (fcn == "addWeeklyEnergyData") {
-            console.log("=========addWeeklyEnergyData=========")
-            console.log(fcn)
-            result = await contract.submitTransaction(fcn, args[0], args[1], args[2]);
-            message = `Successfully added the weekly data`
-        } 
-        else if (fcn == "createPerformanceContract") {
-            console.log("=========createPerformanceContract=========")
-            console.log(fcn)
-            result = await contract.submitTransaction(fcn, args[0]);
-            message = `Successfully added the performance contract`
-        } 
-        else if (fcn == "createModel") {
-            console.log("=========createModel========")
-            console.log(fcn)
-            result = await contract.submitTransaction(fcn, args[0]);
-            message = `Successfully added the model`
-        } 
-        else if (fcn == "reportPrediction") {
-            console.log("=========reportPrediction========")
-            console.log(fcn)
-            result = await contract.submitTransaction(fcn, args[0]);
-            message = `Successfully added the prediction`
-        }
-        else if (fcn == "trustUpdate") {
-            console.log("=========trustUpdate========")
-            console.log(fcn)
-            result = await contract.submitTransaction(fcn, args[0]);
-            message = `Successfully updated trust score`
-        }  
+       
         else {
             return `Invocation function not found. Function is ${fcn}`
         }

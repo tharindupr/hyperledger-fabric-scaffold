@@ -27,10 +27,10 @@ const getCCP = async (org) => {
 const getCaUrl = async (org, ccp) => {
     let caURL ;
     if (org == "Org1") {
-        caURL = ccp.certificateAuthorities['ca.org1.digiblocks.com'].url;
+        caURL = ccp.certificateAuthorities['ca.org1.example.com'].url;
 
     } else if (org == "Org2") {
-        caURL = ccp.certificateAuthorities['ca.org2.digiblocks.com'].url;
+        caURL = ccp.certificateAuthorities['ca.org2.example.com'].url;
     } else
         return null
     return caURL
@@ -135,10 +135,10 @@ const getRegisteredUser = async (username, userOrg, role,  isJson) => {
 const getCaInfo = async (org, ccp) => {
     let caInfo
     if (org == "Org1") {
-        caInfo = ccp.certificateAuthorities['ca.org1.digiblocks.com'];
+        caInfo = ccp.certificateAuthorities['ca.org1.example.com'];
 
     } else if (org == "Org2") {
-        caInfo = ccp.certificateAuthorities['ca.org2.digiblocks.com'];
+        caInfo = ccp.certificateAuthorities['ca.org2.example.com'];
     } else
         return null
     return caInfo
@@ -151,7 +151,7 @@ const enrollAdmin = async (org, ccp) => {
 
     try {
 
-        const caInfo = await getCaInfo(org, ccp) //ccp.certificateAuthorities['ca.org1.digiblocks.com'];
+        const caInfo = await getCaInfo(org, ccp) //ccp.certificateAuthorities['ca.org1.example.com'];
         const caTLSCACerts = caInfo.tlsCACerts.pem;
         const ca = new FabricCAServices(caInfo.url, { trustedRoots: caTLSCACerts, verify: false }, caInfo.caName);
 

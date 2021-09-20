@@ -29,7 +29,7 @@ approveForMyOrg1() {
     setGlobalsForPeer0Org1
     # set -x
     peer lifecycle chaincode approveformyorg -o localhost:7050 \
-        --ordererTLSHostnameOverride orderer.digiblocks.com --tls \
+        --ordererTLSHostnameOverride orderer.example.com --tls \
         --collections-config $PRIVATE_DATA_CONFIG \
         --cafile $ORDERER_CA --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
         --init-required --package-id ${PACKAGE_ID} \
@@ -44,7 +44,7 @@ approveForMyOrg2() {
     setGlobalsForPeer0Org2
 
     peer lifecycle chaincode approveformyorg -o localhost:7050 \
-        --ordererTLSHostnameOverride orderer.digiblocks.com --tls $CORE_PEER_TLS_ENABLED \
+        --ordererTLSHostnameOverride orderer.example.com --tls $CORE_PEER_TLS_ENABLED \
         --cafile $ORDERER_CA --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --collections-config $PRIVATE_DATA_CONFIG \
         --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \

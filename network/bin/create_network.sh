@@ -51,7 +51,7 @@ configtxgen -profile BasicChannel -configPath ../config/ -outputAnchorPeersUpdat
 
 # export FABRIC_LOGGING_SPEC=INFO
 # export FABRIC_CFG_PATH=$DIR/../config
-# export COMPOSE_PROJECT_NAME=digiblocks
+# export COMPOSE_PROJECT_NAME=example
 # export IMAGE_TAG=latest
 # source   $DIR/.env
 

@@ -8,7 +8,7 @@ CC_NAME=$1
 chaincodeInvokeInit() {
     setGlobalsForPeer0Org1
     peer chaincode invoke -o localhost:7050 \
-        --ordererTLSHostnameOverride orderer.digiblocks.com \
+        --ordererTLSHostnameOverride orderer.example.com \
         --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA \
         -C $CHANNEL_NAME -n ${CC_NAME} \
         --peerAddresses localhost:7051 --tlsRootCertFiles $PEER0_ORG1_CA \

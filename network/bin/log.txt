@@ -1,2 +1,0 @@
-Installed chaincodes on peer:
-Package ID: modelcontract_1:9c3c1daccf3180edc0bce83181842c7fe1e406ef026dc582e96d410c967a7890, Label: modelcontract_1

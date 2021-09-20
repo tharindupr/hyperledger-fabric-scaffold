@@ -1,4 +1,4 @@
-export COMPOSE_PROJECT_NAME=digiblocks
+export COMPOSE_PROJECT_NAME=example
 export IMAGE_TAG=latest
 
 DIR="$( which $BASH_SOURCE)"
