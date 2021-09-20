@@ -10,31 +10,17 @@ chmod -R 755 ./*
 
 Starting the network
 --------------------
+This will start the ../devenv/docker-compose.base.yaml docker compose enviroment. 
 ```sh
 ./init_dev_env.sh      
 ```
 
-## 2. Starting the network 
-./init_dev_env.sh       <br/>
+Creating the channel and join Peers to the Channel
+--------------------------------------------------
+```sh
+./create_channel.sh 
+```
 
-
-## 3. Checking the status of Docker containers
-docker ps               <br/>
-
-#### Thirteen containers should be running. 
-
-## 4. Creating the channel and connecting Peers to the Channel
-#### open another ssh connection or terminal to the host machine. And then execute following command. 
-./create_channel.sh   <br/>
-
-
-## 5. Start HyperLedger Explorer
-./start_explorer.sh  <br/>
-Access the HLF Exploerer on port 8090
-
-
-### check logs of the containers 
-./collect_logs.sh
 
 
 # Deploying the Chaincodes 
