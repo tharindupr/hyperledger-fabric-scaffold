@@ -64,5 +64,11 @@ Committing the chaincode on two orgs
 ./commit_chaincode.sh "./../../gocc/src/github.com/tharindupr/sample" "samplecontract" 1
 ```
 
+Invoking the init function
+---------------------------------
+```sh
+./invoke_init.sh samplecontract 1
+```
+
 ### Learn more on the Chaincode lifecyle : <a href="https://hyperledger-fabric.readthedocs.io/en/release-2.0/chaincode_lifecycle.html#fabric-chaincode-lifecycle"> Here </a>
 
