@@ -1,44 +1,65 @@
-# Fabric 2.0
-# September 2021
+Fabric 2.0
+==========
+September 2021
 
-## Prerequisites
-Ubuntu 18 or higher 
-Docker version 17.06.2-ce or greater is required.
-Go version 1.12.x is required.
+Prerequisites
+==============
+Ubuntu 18 or higher <br/>
+Docker version 17.06.2-ce or greater is required.<br/>
+Go version 1.12.x is required. <br/>
 
 
-## If you are on Windows 
+Installing Prerequisites
+------------------------
+<!-- ## If you are on Windows 
 Make sure to install Virtual Box and Vagrant
 cd into this directory.
-vagrant up
+vagrant up -->
 
 
-## 1 Open a terminal and give execute permissions
-cd installation  <br/>
-chmod -R 755 ./*  <br/>
+### 1. Change permissions
+```sh
+cd installation  
+chmod -R 755 ./*  
+```
 
-# 2 Install Pre-Requisites & Validate
+### 2. Installing Docker, GoLang and NodeJS
 This will install the minimum version required. 
-./install-prereqs.sh  <br/>
-source ~/.profile  <br/>
-source ~/.bashrc   <br/>
+```sh
+./install-prereqs.sh  
+source ~/.profile  
+source ~/.bashrc 
+```
 
-# Logout and Login Again (To reflect the changes to GOPATH)
+### 3. Validate
+Make sure everything went well. You might need to restart the terminal to reflect the path changes. 
+```sh
 sudo ./validate-prereqs.sh
+```
 
+### 4. Installing Govendor 
+```sh
+sudo ./install-gotools.sh
+```
 
-# 3 Install the Fabric binaries & images
-sudo -E ./install-fabric.sh  <br/>
-sudo ./validate-fabric.sh  <br/>
+Installing Fabric 2.0
+---------------------
+### 1. Install the Fabric binaries & images
+```sh
+sudo curl -sSL http://bit.ly/2ysbOFE -o bootstrap.sh
+chmod 777 ./bootstrap.sh
+./bootstrap.sh 2.1.0 1.4.6 -s
+sudo cp ./bin/*    /usr/local/bin
+```
 
-<!-- # 4 Install Hyperledger Explorer tool
-./install-explorer.sh
-sudo ./validate-explorer.sh -->
+### 2. Validate
+```sh
+sudo ./validate-fabric.sh 
+```
 
-# 5 Install the Go Tools
-./install-gotools.sh
-
-
-
-
-
+### 3. Install Go Fabric Shim package
+This is required for developing Chaincodes
+```sh
+go get github.com/hyperledger/fabric-chaincode-go/shim
+go get github.com/hyperledger/fabric-chaincode-go/shimtest
+```
