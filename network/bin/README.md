@@ -3,6 +3,7 @@
 Creating Crypto Assets, Genesis Block, Channel Configuration and Anchor Peers
 -----------------------------------------------------------------------------
 ```sh
+cd network/bin
 chmod -R 755 ./*
 ./create_network.sh 
 ```
