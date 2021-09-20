@@ -1,5 +1,8 @@
 #### Fabric 2.0
 
+Starting the Fabric Network
+===========================
+
 Creating Crypto Assets, Genesis Block, Channel Configuration and Anchor Peers
 -----------------------------------------------------------------------------
 ```sh
@@ -21,11 +24,10 @@ Creating the channel and join Peers to the Channel
 ./create_channel.sh 
 ```
 
+Deploying Chaincode
+===========================
 
-
-# Deploying the Chaincodes 
-
-## 6. Getting dependecies and packaging the chain code 
+## Getting dependecies and packaging the chain code 
 ./package_chaincode.sh [path_to_src] [chaincode_name] [version]
 
 ## 7. Installing chaincode on two orgs
