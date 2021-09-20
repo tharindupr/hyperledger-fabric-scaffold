@@ -1,12 +1,17 @@
 #### Fabric 2.0
 
+Creating Crypto Assets, Genesis Block, Channel Configuration and Anchor Peers
+-----------------------------------------------------------------------------
+```sh
+chmod -R 755 ./*
+./create_network.sh 
+```
 
-# Setting Up the network
-
-## 1. Creating the Crypto assets
-chmod -R 755 ./*       <br/>
-./create_network.sh    <br/>
-
+Starting the network
+--------------------
+```sh
+./init_dev_env.sh      
+```
 
 ## 2. Starting the network 
 ./init_dev_env.sh       <br/>
