@@ -11,10 +11,13 @@ network\config\crypto-config\peerOrganizations\org2.example.com\tlsca\tlsca.org2
 
 
 Running the API
------------------------------------
+---------------
 ```sh
 cd app
 npm install
 node app.js
 ```
 
+Test API
+--------
+Import the Postman collection SampleRecord.postman_collection.json into Postman to test the API end points. 
