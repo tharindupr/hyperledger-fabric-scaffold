@@ -8,5 +8,6 @@ Instructions to get things started
 - [Installation](installation/)
 - [Hyperledger Fabric Network](network/config)
 - [Start the network](network/bin)
-- [Sample Chaincodes](gocc/)
+- [Sample Chaincodes](gocc/src/github.com/tharindupr/sample)
+- [Run the API](api)
 
