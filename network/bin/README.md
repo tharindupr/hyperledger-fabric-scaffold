@@ -24,53 +24,45 @@ Creating the channel and join Peers to the Channel
 ./create_channel.sh 
 ```
 
-Deploying Chaincode
-===========================
+Deploying the sample Chaincode
+==============================
 
-## Getting dependecies and packaging the chain code 
+Getting dependecies and packaging the chain code 
+------------------------------------------------
+```sh
 ./package_chaincode.sh [path_to_src] [chaincode_name] [version]
+```
+```sh
+./package_chaincode.sh "./../../gocc/src/github.com/tharindupr/sample" "samplecontract" 1
+```
 
-## 7. Installing chaincode on two orgs
+Installing chaincode on two orgs
+--------------------------------
+```sh
 ./install_chaincode.sh [path_to_src] [chaincode_name] [version]
+```
 
-## 8. Aproving the chaincode on two orgs
+```sh
+./install_chaincode.sh "./../../gocc/src/github.com/tharindupr/sample" "samplecontract" 1
+```
+
+Aproving the chaincode on two orgs
+---------------------------------
+```sh
 ./approve_chaincode.sh [path_to_src] [chaincode_name] [version]
+```
+```sh
+./approve_chaincode.sh "./../../gocc/src/github.com/tharindupr/sample" "samplecontract" 1
+```
 
-## 9. Committing the chaincode on two orgs
+Committing the chaincode on two orgs
+---------------------------------
+```sh
 ./commit_chaincode.sh [path_to_src] [chaincode_name] [version]
+```
+```sh
+./commit_chaincode.sh "./../../gocc/src/github.com/tharindupr/sample" "samplecontract" 1
+```
 
 ### Learn more on the Chaincode lifecyle : <a href="https://hyperledger-fabric.readthedocs.io/en/release-2.0/chaincode_lifecycle.html#fabric-chaincode-lifecycle"> Here </a>
-
-# Invoking the Chaincodes 
-
-## 10. Invoking the init function of the installed chaincode. 
-./invoke_init.sh [chaincodename]
-
-
-## 11. Using Invoke function of the installed chaincode. 
-./invoke_chaincode.sh [chaincodename] <br>
-Make sure you set the the necesory arguments required
-
-
-
-# Quick Network Dev Env
-
-## Restart the HLF network
-./restart_dev_env.sh <br>
-
-## Deploy Subject Contract
-./deploy_chaincode_assetmanagementcontract.sh [version]
-
-This will start all the containers + create the channel
-
-
-
-# Start client application
-
-## Change Directory to api (If you are in bin)
-cd ../../api
-
-## Start the node API
-node app.js
-
 
