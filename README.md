@@ -1,6 +1,9 @@
 # hyperledger-fabric-scaffold
 
 This is a scaffold to start a Hyperledger Fabric Project 
+<p align="center">
+  <img src="network.png"?raw=true width=40% title="Network Template">
+</p>
 
 
 Instructions to get things started
