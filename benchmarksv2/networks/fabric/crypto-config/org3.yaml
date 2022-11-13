@@ -1,0 +1,88 @@
+name: digiblocks
+version: 1.0.0
+client:
+  organization: Org3
+  connection:
+    timeout:
+      peer:
+        endorser: '300'
+
+organizations:
+  org2:
+    mspid: Org3MSP
+    peers:
+    - peer0.org3.digiblocks.com
+    - peer1.org3.digiblocks.com
+
+orderers:
+  orderer3.digiblocks.com:
+    url: grpcs://10.128.0.21:9050
+    grpcOptions:
+      ssl-target-name-override: orderer3.digiblocks.com
+    tlsCACerts:
+      path: networks/fabric/crypto-config/ordererOrganizations/digiblocks.com/orderers/orderer3.digiblocks.com/msp/tlscacerts/tlsca.digiblocks.com-cert.pem
+  # orderer2.digiblocks.com:
+  #   url: grpcs://10.128.0.21:8050
+  #   grpcOptions:
+  #     ssl-target-name-override: orderer2.digiblocks.com
+  #   tlsCACerts:
+  #     path: networks/fabric/crypto-config/ordererOrganizations/digiblocks.com/orderers/orderer2.digiblocks.com/msp/tlscacerts/tlsca.digiblocks.com-cert.pem
+  # orderer3.digiblocks.com:
+  #   url: grpcs://10.128.0.21:9050
+  #   grpcOptions:
+  #     ssl-target-name-override: orderer3.digiblocks.com
+  #   tlsCACerts:
+  #     path: networks/fabric/crypto-config/ordererOrganizations/digiblocks.com/orderers/orderer3.digiblocks.com/msp/tlscacerts/tlsca.digiblocks.com-cert.pem
+
+peers:
+  peer0.org3.digiblocks.com:
+    url: grpcs://10.128.0.21:11051
+    grpcOptions:
+      ssl-target-name-override: peer0.org3.digiblocks.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: networks/fabric/crypto-config/peerOrganizations/org3.digiblocks.com/peers/peer0.org3.digiblocks.com/msp/tlscacerts/tlsca.org3.digiblocks.com-cert.pem
+
+  peer1.org3.digiblocks.com:
+    url: grpcs://10.128.0.21:12051
+    grpcOptions:
+      ssl-target-name-override: peer1.org3.digiblocks.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: networks/fabric/crypto-config/peerOrganizations/org3.digiblocks.com/peers/peer1.org3.digiblocks.com/msp/tlscacerts/tlsca.org3.digiblocks.com-cert.pem
+
+  # peer0.org3.digiblocks.com:
+  #   url: grpcs://10.128.0.21:9051
+  #   grpcOptions:
+  #     ssl-target-name-override: peer0.org3.digiblocks.com
+  #     grpc.keepalive_time_ms: 600000
+  #   tlsCACerts:
+  #     path: networks/fabric/crypto-config/peerOrganizations/org3.digiblocks.com/peers/peer0.org3.digiblocks.com/msp/tlscacerts/tlsca.org3.digiblocks.com-cert.pem
+  # peer1.org3.digiblocks.com:
+  #   url: grpcs://10.128.0.21:10051
+  #   grpcOptions:
+  #     ssl-target-name-override: peer1.org3.digiblocks.com
+  #     grpc.keepalive_time_ms: 600000
+  #   tlsCACerts:
+  #     path: networks/fabric/crypto-config/peerOrganizations/org3.digiblocks.com/peers/peer1.org3.digiblocks.com/msp/tlscacerts/tlsca.org3.digiblocks.com-cert.pem
+
+channels:
+    mychannel:
+        orderers:
+        - orderer.digiblocks.com
+        - orderer2.digiblocks.com
+        - orderer3.digiblocks.com
+        - orderer4.digiblocks.com
+        - orderer5.digiblocks.com
+        peers:
+            peer0.org1.digiblocks.com:
+                eventSource: true
+            peer0.org2.digiblocks.com:
+                eventSource: 
+            peer0.org3.digiblocks.com:
+                eventSource: 
+            peer0.org4.digiblocks.com:
+                eventSource: 
+            peer0.org5.digiblocks.com:
+                eventSource: 
+            

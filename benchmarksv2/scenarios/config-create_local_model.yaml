@@ -1,0 +1,187 @@
+test:
+  name: simple
+  description: This is an example benchmark for caliper, to test the backend DLT's
+  workers:
+    type: local
+    number: 5      #number of clients you need to spawn
+  rounds:
+      # - label: createAsset
+      #   description: Read asset benchmark
+      #   txNumber: 120
+      #   rateControl: 
+      #     type: fixed-rate
+      #     opts:
+      #       tps: 120
+      #   workload:
+      #     module: scenarios/trustUpdate.js
+      #     arguments:
+      #       contractId: modelcontract
+      
+      # - label: createAsset
+      #   description: Read asset benchmark
+      #   txNumber: 130
+      #   rateControl: 
+      #     type: fixed-rate
+      #     opts:
+      #       tps: 130
+      #   workload:
+      #     module: scenarios/trustUpdate.js
+      #     arguments:
+      #       contractId: modelcontract
+      - label: create_local_model_round1
+        description: Read asset benchmark
+        txNumber: 100
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 25
+        workload:
+          module: scenarios/federated_create_local_model.js
+          arguments:
+            contractId: federated_learning_contract
+         
+      - label: create_local_model_round2
+        description: Read asset benchmark
+        txNumber: 200
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 50
+        workload:
+          module: scenarios/federated_create_local_model.js
+          arguments:
+            contractId: federated_learning_contract
+
+      - label: create_local_model_round3
+        description: Read asset benchmark
+        txNumber: 400
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 75
+        workload:
+          module: scenarios/federated_create_local_model.js
+          arguments:
+            contractId: federated_learning_contract
+
+      - label: create_local_model_round4
+        description: Read asset benchmark
+        txNumber: 800
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 100
+        workload:
+          module: scenarios/federated_create_local_model.js
+          arguments:
+            contractId: federated_learning_contract
+
+
+      - label: create_local_model_round5
+        description: Read asset benchmark
+        txNumber: 1000
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 125
+        workload:
+          module: scenarios/federated_create_local_model.js
+          arguments:
+            contractId: federated_learning_contract
+
+      - label: create_local_model_round6
+        description: Read asset benchmark
+        txNumber: 1000
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 150
+        workload:
+          module: scenarios/federated_create_local_model.js
+          arguments:
+            contractId: federated_learning_contract
+
+      - label: create_local_model_round7
+        description: Read asset benchmark
+        txNumber: 1000
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 175
+        workload:
+          module: scenarios/federated_create_local_model.js
+          arguments:
+            contractId: federated_learning_contract
+      
+      - label: create_local_model_round7
+        description: Read asset benchmark
+        txNumber: 1000
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 200
+        workload:
+          module: scenarios/federated_create_local_model.js
+          arguments:
+            contractId: federated_learning_contract
+
+      - label: create_local_model_round7
+        description: Read asset benchmark
+        txNumber: 1000
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 225
+        workload:
+          module: scenarios/federated_create_local_model.js
+          arguments:
+            contractId: federated_learning_contract
+
+      - label: create_local_model_round7
+        description: Read asset benchmark
+        txNumber: 1000
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 250
+        workload:
+          module: scenarios/federated_create_local_model.js
+          arguments:
+            contractId: federated_learning_contract
+      
+      - label: create_local_model_round7
+        description: Read asset benchmark
+        txNumber: 1000
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 275
+        workload:
+          module: scenarios/federated_create_local_model.js
+          arguments:
+            contractId: federated_learning_contract
+      # - label: createAsset
+      #   description: Read asset benchmark
+      #   txNumber: 170
+      #   rateControl: 
+      #     type: fixed-rate
+      #     opts:
+      #       tps: 170
+      #   workload:
+      #     module: scenarios/trustUpdate.js
+      #     arguments:
+      #       contractId: modelcontract
+
+
+
+monitor:
+  type:
+  - docker
+  docker:  
+    containers:
+    - http://localhost:7050
+    - http://localhost:8050
+    - http://localhost:9050
+    - http://localhost:10050
+    - http://localhost:11050
+      

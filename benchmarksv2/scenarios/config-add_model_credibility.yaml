@@ -1,0 +1,188 @@
+test:
+  name: simple
+  description: This is an example benchmark for caliper, to test the backend DLT's
+  workers:
+    type: local
+    number: 5      #number of clients you need to spawn
+  rounds:
+      # - label: createAsset
+      #   description: Read asset benchmark
+      #   txNumber: 120
+      #   rateControl: 
+      #     type: fixed-rate
+      #     opts:
+      #       tps: 120
+      #   workload:
+      #     module: scenarios/trustUpdate.js
+      #     arguments:
+      #       contractId: modelcontract
+      
+      # - label: createAsset
+      #   description: Read asset benchmark
+      #   txNumber: 130
+      #   rateControl: 
+      #     type: fixed-rate
+      #     opts:
+      #       tps: 130
+      #   workload:
+      #     module: scenarios/trustUpdate.js
+      #     arguments:
+      #       contractId: modelcontract
+      - label: add_model_credibility1
+        description: Read asset benchmark
+        txNumber: 500
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 5
+        workload:
+          module: scenarios/federated_create_add_model_credibility.js
+          arguments:
+            contractId: federated_learning_contract
+         
+      - label: add_model_credibility2
+        description: Read asset benchmark
+        txNumber: 500
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 10
+        workload:
+          module: scenarios/federated_create_add_model_credibility.js
+          arguments:
+            contractId: federated_learning_contract
+
+      - label: add_model_credibility3
+        description: Read asset benchmark
+        txNumber: 500
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 15
+        workload:
+          module: scenarios/federated_create_add_model_credibility.js
+          arguments:
+            contractId: federated_learning_contract
+
+      - label: add_model_credibility4
+        description: Read asset benchmark
+        txNumber: 500
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 20
+        workload:
+          module: scenarios/federated_create_add_model_credibility.js
+          arguments:
+            contractId: federated_learning_contract
+
+      - label: add_model_credibility4
+        description: Read asset benchmark
+        txNumber: 500
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 25
+        workload:
+          module: scenarios/federated_create_add_model_credibility.js
+          arguments:
+            contractId: federated_learning_contract
+
+      - label: add_model_credibility4
+        description: Read asset benchmark
+        txNumber: 500
+        rateControl: 
+          type: fixed-rate
+          opts:
+            tps: 30
+        workload:
+          module: scenarios/federated_create_add_model_credibility.js
+          arguments:
+            contractId: federated_learning_contract
+
+
+      # - label: add_model_credibility5
+      #   description: Read asset benchmark
+      #   txNumber: 1000
+      #   rateControl: 
+      #     type: fixed-rate
+      #     opts:
+      #       tps: 64
+      #   workload:
+      #     module: scenarios/federated_create_add_model_credibility.js
+      #     arguments:
+      #       contractId: federated_learning_contract
+
+      # - label: add_model_credibility6
+      #   description: Read asset benchmark
+      #   txNumber: 1000
+      #   rateControl: 
+      #     type: fixed-rate
+      #     opts:
+      #       tps: 128
+      #   workload:
+      #     module: scenarios/federated_create_add_model_credibility.js
+      #     arguments:
+      #       contractId: federated_learning_contract
+
+      # - label: add_model_credibility7
+      #   description: Read asset benchmark
+      #   txNumber: 1000
+      #   rateControl: 
+      #     type: fixed-rate
+      #     opts:
+      #       tps: 256
+      #   workload:
+      #     module: scenarios/federated_create_add_model_credibility.js
+      #     arguments:
+      #       contractId: federated_learning_contract
+      
+      # - label: add_model_credibility7
+      #   description: Read asset benchmark
+      #   txNumber: 1000
+      #   rateControl: 
+      #     type: fixed-rate
+      #     opts:
+      #       tps: 512
+      #   workload:
+      #     module: scenarios/federated_create_add_model_credibility.js
+      #     arguments:
+      #       contractId: federated_learning_contract
+
+      # - label: add_model_credibility7
+      #   description: Read asset benchmark
+      #   txNumber: 1000
+      #   rateControl: 
+      #     type: fixed-rate
+      #     opts:
+      #       tps: 1024
+      #   workload:
+      #     module: scenarios/federated_create_add_model_credibility.js
+      #     arguments:
+      #       contractId: federated_learning_contract
+      
+      # - label: createAsset
+      #   description: Read asset benchmark
+      #   txNumber: 170
+      #   rateControl: 
+      #     type: fixed-rate
+      #     opts:
+      #       tps: 170
+      #   workload:
+      #     module: scenarios/trustUpdate.js
+      #     arguments:
+      #       contractId: modelcontract
+
+
+
+monitor:
+  type:
+  - docker
+  docker:  
+    containers:
+    - http://localhost:7050
+    - http://localhost:8050
+    - http://localhost:9050
+    - http://localhost:10050
+    - http://localhost:11050
+      
